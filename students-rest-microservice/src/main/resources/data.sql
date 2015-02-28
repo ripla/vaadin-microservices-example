@@ -1,0 +1,5 @@
+INSERT INTO Student (Id, Name) VALUES (1, 'John Doe')
+INSERT INTO Student (Id, Name) VALUES  (2, 'Jane Doe')
+INSERT INTO Student (Id, Name) VALUES  (3, 'John Smith')
+INSERT INTO Student (Id, Name) VALUES  (4, 'Jane Smith')
+INSERT INTO Student (Id, Name) VALUES  (5, 'Joe Cool')
