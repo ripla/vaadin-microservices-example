@@ -19,6 +19,5 @@ public class StudentApplication extends RepositoryRestMvcConfiguration {
     @Override
     protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
         config.exposeIdsFor(Student.class);
-
     }
 }
