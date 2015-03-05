@@ -12,3 +12,10 @@ spring:
   cloud:
     config:
       enabled: false
+
+---
+
+spring:
+  profiles: cloud
+
+memcache-url:
