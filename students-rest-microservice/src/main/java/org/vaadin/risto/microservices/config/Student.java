@@ -1,10 +1,10 @@
-package org.vaadin.risto.microservices.student;
-
-import lombok.Data;
+package org.vaadin.risto.microservices.config;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import lombok.Data;
 
 @Entity
 @Data

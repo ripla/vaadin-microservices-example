@@ -6,9 +6,6 @@
 # Set the base image to use to Ubuntu
 FROM ubuntu
 
-# Set the file maintainer (your name - the file's author)
-MAINTAINER Maintaner Name
-
 # Update the default application repository sources list
 RUN apt-get update
 

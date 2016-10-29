@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: configserver
+
+encrypt:
+  failOnError: false
+
+management:
+  context-path: /admin

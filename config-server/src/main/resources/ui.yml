@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 8070
 
 eureka:
   client:
@@ -9,6 +9,15 @@ eureka:
     leaseRenewalIntervalInSeconds: 10
 
 spring:
-  cloud:
-    config:
-      enabled: false
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+---
+
+spring:
+  profiles: cloud
+
+memcache-url:
