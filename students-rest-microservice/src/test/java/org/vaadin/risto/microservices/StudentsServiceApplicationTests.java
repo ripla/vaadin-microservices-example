@@ -1,4 +1,4 @@
-package org.vaadin.risto.microservices.config;
+package org.vaadin.risto.microservices;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

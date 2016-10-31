@@ -2,3 +2,5 @@ spring:
   application:
     name: ui
 
+management:
+  context-path: /admin

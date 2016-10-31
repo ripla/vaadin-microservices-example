@@ -16,3 +16,22 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
+
+
+---
+
+spring:
+  profiles: heroku
+
+server:
+  port: ${PORT}
+
+eureka:
+  instance:
+    hostname: ${HEROKU_APP_NAME}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: https://${HEROKU_APP_NAME}:${server.port}/eureka/
+

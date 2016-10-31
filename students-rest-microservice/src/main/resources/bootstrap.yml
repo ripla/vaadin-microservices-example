@@ -2,3 +2,13 @@ spring:
   application:
     name: students-service
 
+management:
+  context-path: /admin
+
+---
+
+spring:
+  profiles: heroku
+  cloud:
+      config:
+        uri: https://${CONFIG_APP_NAME}.herokuapp.com

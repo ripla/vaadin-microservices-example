@@ -1,3 +1,6 @@
 spring:
   application:
     name: eureka
+
+management:
+  context-path: /admin

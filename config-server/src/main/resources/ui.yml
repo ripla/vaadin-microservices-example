@@ -5,8 +5,12 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9000/eureka/
+    healthcheck:
+          enabled: true
   instance:
     leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
 
 spring:
   rabbitmq:

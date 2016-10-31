@@ -1,12 +1,16 @@
 server:
-  port: 9002
+  port: 9001
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:9000/eureka/
+    healthcheck:
+          enabled: true
   instance:
     leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
 
 spring:
   rabbitmq:
@@ -14,3 +18,25 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+---
+
+spring:
+  profiles: heroku
+  rabbitmq:
+
+server:
+  port: ${PORT}
+
+eureka:
+  instance:
+    hostname: ${HEROKU_APP_NAME}
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    statusPageUrl: https://${eureka.hostname}.herokuapp.com/admin/info
+    healthCheckUrl: https://${eureka.hostname}.herokuapp.com/admin/health
+    homePageUrl: https://${eureka.hostname}.herokuapp.com/
+
+  client:
+    serviceUrl:
+      defaultZone: https://${EUREKA_APP_NAME}.herokuapp.com/eureka/

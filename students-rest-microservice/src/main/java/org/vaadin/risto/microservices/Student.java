@@ -1,4 +1,4 @@
-package org.vaadin.risto.microservices.config;
+package org.vaadin.risto.microservices;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

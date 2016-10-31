@@ -1,4 +1,4 @@
-package org.vaadin.risto.microservices.config;
+package org.vaadin.risto.microservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
