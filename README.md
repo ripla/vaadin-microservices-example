@@ -6,17 +6,17 @@ The project was a learning process for creating a micro-services setup from scra
 
 2. Create [Eureka](https://github.com/Netflix/eureka/) server with help from Spring Cloud. Same setup as in step 1, just without data. After starting Eureka I configured the URL to Students-service and it registered itself automatically. This means that clients can find the service without knowing the actual URL. It also allows load balancing later.
 
-3. Create [Vaadin](https://vaadin.com) UI with help from [Spring4Vaadin](https://github.com/peholmst/vaadin4spring). From Vaadin perspective the UI is very simple. The UI uses Spring to handle the basic REST call, but uses [Ribbon](https://github.com/Netflix/ribbon) to load balance the calls and Eureka to discover the service. I also needed help from [Spring HATEOAS](http://projects.spring.io/spring-hateoas/) to map the responses, since Spring Data REST automatically uses HATOAS when mapping the Students REST interface.
+3. Create [Vaadin](https://vaadin.com) UI with help from [Spring add-on](https://vaadin.com/spring). From Vaadin perspective the UI is very simple. The UI uses Spring to handle the basic REST call, but uses [Ribbon](https://github.com/Netflix/ribbon) to load balance the calls and Eureka to discover the service. I also needed help from [Spring HATEOAS](http://projects.spring.io/spring-hateoas/) to map the responses, since Spring Data REST automatically uses HATOAS when mapping the Students REST interface.
 
-4. TODO: At this point the Students-service should scale by just adding more nodes, so I can test this by deploying to a cloud service.
+4. At this point the Students-service scales by just adding more nodes, so I can test this by deploying to Heroku. This needed some additional config
 
-5. TODO: Next I want to be able to scale the Vaadin nodes by just adding more nodes, but since Heroku doesn't support sticky sessions I need to add support for shared sessions. Luckily it's very easy with Spring Boot and [Memcached session manager](https://code.google.com/p/memcached-session-manager/)
+5. Next I want to be able to scale the Vaadin nodes by just adding more nodes. Sticky sessions are required for this.
 
-6. TODO: Add hystrix-dashboard and check that Hystrix streams work
+6. TODO Add Docker files for all services and deploy to AWS
 
-7. TODO Add second service and Zulu for proxying service requests.
+7. TODO: Add hystrix-dashboard and check that Hystrix streams work
 
-8. TODO Add Docker files for all services and deploy to AWS Beanstalk
+8. TODO Add second service and Zulu for proxying service requests.
 
 9. Add asynchronous calls with hystrix
 
