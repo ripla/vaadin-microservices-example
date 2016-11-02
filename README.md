@@ -12,7 +12,7 @@ The project was a learning process for creating a micro-services setup from scra
 
 5. Next I want to be able to scale the Vaadin nodes by just adding more nodes. Sticky sessions are required for this.
 
-6. TODO Add Docker files for all services and deploy to AWS
+6. TODO Add Docker files for all services, update readme and deploy to AWS
 
 7. TODO: Add hystrix-dashboard and check that Hystrix streams work
 

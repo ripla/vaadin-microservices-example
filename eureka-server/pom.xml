@@ -6,11 +6,11 @@
     <parent>
         <groupId>org.vaadin.risto.microservices</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>eureka-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>Eureka server</name>
@@ -32,15 +32,10 @@
             <plugin>
                 <groupId>com.heroku.sdk</groupId>
                 <artifactId>heroku-maven-plugin</artifactId>
-                <version>1.1.1</version>
-                <configuration>
-                    <processTypes>
-                        <!-- No line breaks here, below is the exact command that Heroku will run-->
-                        <!-- @formatter:off -->
-                        <web>java $JAVA_OPTS -jar target/eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=heroku</web>
-                        <!-- @formatter:on -->
-                    </processTypes>
-                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

@@ -5,7 +5,7 @@
 
     <groupId>org.vaadin.risto.microservices</groupId>
     <artifactId>config-server</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>Config server</name>
@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.vaadin.risto.microservices</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <dependencies>
@@ -56,16 +56,21 @@
             <plugin>
                 <groupId>com.heroku.sdk</groupId>
                 <artifactId>heroku-maven-plugin</artifactId>
-                <version>1.1.1</version>
                 <configuration>
                     <processTypes>
                         <!-- No line breaks here, below is the exact command that Heroku will run-->
+                        <!-- Config server needs the native profile, for now -->
                         <!-- @formatter:off -->
-                        <web>java $JAVA_OPTS -jar target/config-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=heroku,native</web>
+                        <web>java $JAVA_OPTS -jar target/${project.build.finalName}.jar --spring.profiles.active=heroku,native</web>
                         <!-- @formatter:on -->
                     </processTypes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
+
 </project>
