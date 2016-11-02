@@ -1,5 +1,5 @@
 server:
-  port: 8070
+  port: 8080
 
 eureka:
   client:
@@ -22,6 +22,21 @@ spring:
 ---
 
 spring:
-  profiles: cloud
+  profiles: heroku
+  rabbitmq:
 
-memcache-url:
+server:
+  port: ${PORT}
+
+eureka:
+  instance:
+    hostname: ${HEROKU_APP_NAME}.herokuapp.com
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    statusPageUrl: https://${eureka.hostname}/admin/info
+    healthCheckUrl: https://${eureka.hostname}/admin/health
+    homePageUrl: https://${eureka.hostname}/
+
+  client:
+    serviceUrl:
+      defaultZone: https://${EUREKA_APP_NAME}.herokuapp.com/eureka/

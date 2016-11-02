@@ -36,9 +36,5 @@ public class MicroserviceUI extends UI {
         setContent(new MVerticalLayout(studentGrid).withFullWidth()
                 .withMargin(true)
                 .withAlign(studentGrid, Alignment.MIDDLE_CENTER));
-
-//        setContent(new Label(studentsClient.getStudents(0,5).collect
-//                (Collectors.toList())
-//                .toString()));
     }
 }

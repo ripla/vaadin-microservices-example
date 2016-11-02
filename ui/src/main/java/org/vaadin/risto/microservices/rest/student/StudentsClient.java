@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.PagedResources;
 import org.springframework.hateoas.Resource;
-import org.springframework.hateoas.Resources;
 import org.springframework.hateoas.mvc.TypeReferences;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -27,10 +26,12 @@ public class StudentsClient {
         params.put("page", offset / limit);
         params.put("size", limit);
 
-        ResponseEntity<Resources<Resource<Student>>> studentResponse = template
-                .exchange(URL, HttpMethod.GET, null,
-                        new TypeReferences.ResourcesType<Resource<Student>>(),
-                        params);
+        final ResponseEntity<PagedResources<Resource<Student>>> studentResponse =
+                template
+                        .exchange(URL, HttpMethod.GET, null,
+                                new TypeReferences
+                                        .PagedResourcesType<Resource<Student>>(){},
+                                params);
 
         return studentResponse.getBody().getContent().stream()
                 .map(Resource::getContent);

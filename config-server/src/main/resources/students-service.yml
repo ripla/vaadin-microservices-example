@@ -30,12 +30,12 @@ server:
 
 eureka:
   instance:
-    hostname: ${HEROKU_APP_NAME}
+    hostname: ${HEROKU_APP_NAME}.herokuapp.com
     nonSecurePortEnabled: false
     securePortEnabled: true
-    statusPageUrl: https://${eureka.hostname}.herokuapp.com/admin/info
-    healthCheckUrl: https://${eureka.hostname}.herokuapp.com/admin/health
-    homePageUrl: https://${eureka.hostname}.herokuapp.com/
+    statusPageUrl: https://${eureka.hostname}/admin/info
+    healthCheckUrl: https://${eureka.hostname}/admin/health
+    homePageUrl: https://${eureka.hostname}/
 
   client:
     serviceUrl:
